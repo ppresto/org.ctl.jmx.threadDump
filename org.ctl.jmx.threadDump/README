@@ -1,0 +1,20 @@
+Description: Create a TDA compatible thread dump using JMX
+
+Usage: 	java -jar tdump.jar -h <hostname>:<jmxPort> [OPTIONS]
+
+OPTIONS:
+  -u, --user 
+	username if security is enabled
+  -p, --password 
+	password if security is enabled
+  -s, --stats 
+	gather additional statistics on each thread (cpu, wait, and block seconds).
+  -j, --remoting-jmx 
+	Connect with Jboss remoting-jmx subsystem. (Default: /jndi/rmi://)
+  -f, --file 
+	write thread dump to <file>.  You can write to the same file multiple times.
+	
+Examples:
+  Jboss(remoting-jmx): java -jar tdump.jar -j -h <hostname>:<port> -u user -p xxxxx 
+
+  Default(rmi): java -jar tdump.jar -h <hostname>:<port> -u user -p passwd -f C:\temp\app.tdump

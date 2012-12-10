@@ -130,7 +130,7 @@ public void writeDump(String file, String data) throws IOException {
 	try {
 	    File tmp = new File(file);
 	    if (tmp.exists() && !tmp.isDirectory() && tmp.canWrite()){
-		    writer = new BufferedWriter(new FileWriter(tmp+"_"+date+".tdump", true));
+		    writer = new BufferedWriter(new FileWriter(tmp, true));
 		    writer.write(data);
 	    }
 		if (tmp.isDirectory() && tmp.canWrite()){
@@ -138,7 +138,7 @@ public void writeDump(String file, String data) throws IOException {
 	    	writer = new BufferedWriter(new FileWriter(dumpFile, true));
 		    writer.write(data);
 	    } else {
-	    	writer = new BufferedWriter(new FileWriter(tmp+"_"+date+".tdump", true));
+	    	writer = new BufferedWriter(new FileWriter(tmp, true));
 		    writer.write(data);
 	    }
 	} catch (IOException e){
